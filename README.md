@@ -7,6 +7,6 @@ Some info about every program
     Predictors: MLP.
 
 - MLP vs CNN:
-    Dataset: digits dataset from dcikit-learn;
+    Dataset: digits dataset from scikit-learn;
     Operations: just scaling and predictions;
     Predictors: MLP, CNN.
