@@ -7,7 +7,11 @@ Some info about every program
     - Predictors: MLP.
 
 - MLP vs CNN:
-
     - Dataset: digits dataset from scikit-learn;
     - Operations: just scaling and predictions;
     - Predictors: MLP, CNN.
+
+-Predictors ditribution:
+    -Dataset: breast cancer from scikit-learn;
+    -Operations: scaling, hyperparameters tuning, study of the score distribution of the best models;
+    -Predictors: Logistic Regression, Random forest, Gradient Boosting Classifier, Support Vector Machine.
