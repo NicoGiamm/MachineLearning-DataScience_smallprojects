@@ -19,4 +19,4 @@ Some info about every program
 - Earthquake:
     - Dataset: found on GitHub, interview about earthquake;
     - Operations: data cleaning and data encoding, predictions and analysis;
-    - Predictors: Random forest, Gradient Boosting Classifier, Support Vector Machine, MLP.
+    - Predictors: Random forest, Gradient Boosting Classifier, Support Vector Machine, Logistick regression, stacking with KNN and MLP.
