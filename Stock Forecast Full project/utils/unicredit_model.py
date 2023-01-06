@@ -3,8 +3,9 @@ from tensorflow.keras.layers import Conv1D, LSTM, Dense, Dropout, Bidirectional,
 from tensorflow.keras.layers import MaxPooling1D, Flatten
 from tensorflow.keras.regularizers import L1, L2
 
+#CNN-LSTM model
 def cnn_lstm(ws=20, multi=3):
-    
+
     model = tf.keras.Sequential()
 
     # Creating the Neural Network model
