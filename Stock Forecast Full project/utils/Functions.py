@@ -10,6 +10,10 @@ from sklearn.base import BaseEstimator, TransformerMixin
 from pandas_datareader import data as web
 import os
 
+plt.rcParams['figure.figsize'] = (18, 10)
+plt.rcParams['axes.labelsize'] = 15
+plt.rcParams['axes.grid'] = True
+
 
 def forecast_reshape_X_y(data, window_size=20):
 
