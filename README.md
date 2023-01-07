@@ -25,3 +25,6 @@ Some info about every program
     - Dataset: from Udemy class, bank customers profiles, we want to classify if a customer will quit the bank.;
     - Operations: data cleaning and preprocessing, cross validation and analysis of results;
     - Predictors: ANN and Random Forests.
+
+- Stock Forecast & Stock Forecast Full Project:
+    - See into the folders for a detailed description
