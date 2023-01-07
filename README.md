@@ -27,4 +27,4 @@ Some info about every program
     - Predictors: ANN and Random Forests.
 
 - Stock Forecast & Stock Forecast Full Project:
-    - See into the folders for a detailed description
+    - Look into the folders for a detailed description
