@@ -5,6 +5,9 @@ import tensorflow as tf
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler
 
+plt.rcParams['figure.figsize'] = (18, 10)
+plt.rcParams['axes.labelsize'] = 15
+plt.rcParams['axes.grid'] = True
 
 def forecast_split(data, window_size=30, dtp=1, test_days=30):
     """
@@ -84,7 +87,6 @@ class Forecastsimulator():
         plt.plot(y_test[:,0], color = 'red', label = 'Real Price')
         plt.xlabel('Time')
         plt.ylabel('Price')
-        plt.grid()
         plt.legend()
         plt.show()
         return
@@ -174,7 +176,6 @@ class Forecastsimulator():
         plt.xlabel('Time')
         plt.ylabel('Price derivative')
         plt.title('Test')
-        plt.grid()
         plt.show()
         
         score = []
