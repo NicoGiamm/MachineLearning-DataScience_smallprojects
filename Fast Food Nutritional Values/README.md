@@ -1,6 +1,6 @@
 # Fast Food Nutritional Values
 
-This dataset is found on Kaggle, here's the description:
+This dataset is taken from Kaggle, here's the description:
 
 This dataset is webscrapped and pdf-to-csv converted data, which is organised and cleaned prior and only requires rows are gathered and exported. This includes various Fast Food Chain Giants like KFC, McDonald's, Burger King, Dominos, Pizza Hut and Starbucks.
 
