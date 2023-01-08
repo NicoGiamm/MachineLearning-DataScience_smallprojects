@@ -15,5 +15,3 @@ Then once a week you can run weekly_report to have a little statistical analysis
 Note 1: weekly report in reality is not weekly because the file keeps updating with time so after 4 weeks would be a monthly report
 
 Note 2: the trade is still manual
-
-prova
