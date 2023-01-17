@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 from sklearn.model_selection import learning_curve
 
-plt.rcParams['axes.Grid'] = True
+plt.rcParams['axes.grid'] = True
 
 def plot_learning_curve(
     estimator,
