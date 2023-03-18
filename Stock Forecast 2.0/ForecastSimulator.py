@@ -30,11 +30,13 @@ def forecast_split(data, window_size=30, dtp=1, test_days=30):
         y_true.append(data.values[i+1:i+1+dtp,0])
     
     
-    data = data.rolling(5).mean().dropna()
+    data = data.rolling(3).mean().dropna()
     for i in range(window_size, data.shape[0]-1-dtp):
         X.append(data.values[i+1-window_size:i+1,0].tolist())
         y_rolled.append(data.values[i+1:i+1+dtp,0])
-    #    X[-1] += (data.values[i+1-window_size:i+1,0] - data.values[i-window_size:i,0]).tolist()
+        
+        #Add differences between value and dates 
+        #X[-1] += (data.values[i+1-window_size:i+1,0] - data.values[i-window_size:i,0]).tolist()
         
     X = np.asarray(X).astype('float32')
     y_true = np.asarray(y_true).astype('float32')
@@ -113,6 +115,8 @@ class Forecastsimulator():
         self.train_nn(X_train, y_train, verbose=0)
         prediction = np.empty(shape=(1,y_test.shape[1]))
         dim = X_test.shape[0]
+        y_train_new = np.empty(shape=(1,y_test.shape[1]))
+        X_train_new = np.empty(shape=(1,X_train.shape[1], X_train.shape[2], X_train.shape[3]))
         
         for i in range(dim):
             
@@ -120,14 +124,14 @@ class Forecastsimulator():
             pred = self.predict(X_test[0:1])
             prediction = np.append(prediction, pred, axis=0)
             
-            X_train = np.append(X_train[1:], X_test[0:1], axis=0)
+            X_train_new = np.append(X_train_new, X_test[0:1], axis=0)
             X_test = X_test[1:]
-            y_train = np.append(y_train[1:], y_test[0:1], axis=0)
+            y_train_new = np.append(y_train_new, y_test[0:1], axis=0)
             y_test = y_test[1:]
             
             if ((i+1)%retrain_period == 0):
-                self.model = model
-                self.train_nn(X_train, y_train, verbose = 0, epochs=70)
+                
+                self.train_nn(X_train_new, y_train_new, verbose = 0, epochs=5)
                 
         prediction = prediction[1:]
         return prediction
@@ -188,7 +192,7 @@ class Forecastsimulator():
         plt.show()
         
         score = []
-        start = 200
+        start = 500
         total = 0
         tot = []
         perc = []
