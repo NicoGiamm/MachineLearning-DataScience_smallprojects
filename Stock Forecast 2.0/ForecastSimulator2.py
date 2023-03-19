@@ -106,7 +106,7 @@ class Forecastsimulator():
  
     ###############################################################################
 
-    def train_nn(self, X_train, y_train, epochs=50, batch_size=32, verbose=2):
+    def train_nn(self, X_train, y_train, epochs=100, batch_size=20, verbose=2):
         """
         train the model
         """
