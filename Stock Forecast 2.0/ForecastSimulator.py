@@ -181,7 +181,7 @@ class Forecastsimulator():
         true_diff = []
 
         for i in range(y_test.shape[0]-1):
-            pred_diff.append(prediction[i+1,-1] - prediction[i,-1])
+            pred_diff.append(prediction[i+1,-1] - prediction[i-1,-1])
             true_diff.append(y_test[i+1,0] - y_test[i,0])
 
         sns.lineplot( pred_diff, label = 'predicted')
@@ -209,7 +209,7 @@ class Forecastsimulator():
                 score.append(0)
                 total -= start*percentage
                 perc.append(-percentage*100)
-    
+                
             tot.append(total)
         
         tot = np.array(tot)
