@@ -45,9 +45,10 @@ def forecast_split(data, window_size=30, dtp=1, test_days=30):
     X_train = X[:-test_days,:]
     X_test = X[-test_days:,:]
     y_train = y_rolled[:-test_days]
-    y_test = y_true[-test_days:]
+    y_test = y_rolled[-test_days:]
+    y_true = y_true[-test_days:]
         
-    return X_train, X_test, y_train, y_test
+    return X_train, X_test, y_train, y_test, y_true
 
 ###############################################################################
 
