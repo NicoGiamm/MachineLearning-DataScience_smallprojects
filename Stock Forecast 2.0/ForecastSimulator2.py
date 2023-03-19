@@ -32,7 +32,7 @@ def forecast_split(data, window_size=30, dtp=1, test_days=30):
     
     data = data.rolling(3).mean().dropna()
     for i in range(window_size, data.shape[0]-1-dtp):
-        X.append(data.values[i+1-window_size:i+1,0].tolist())
+        X.append(data.values[i+1-window_size:i+1,0:].flatten())
         y_rolled.append(data.values[i+1:i+1+dtp,0])
         
         #Add differences between value and dates 
